@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EZ Reverse - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/wu/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/wu/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/wu/img/0byteCTF.Chal">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">0byteCTF.Chal</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        <div class="container">
+        <div class="content">
+            <blockquote>
+                <p class="title is-3">EZ Reverse</p>
+                <p class="subtitle is-6">Point : 10<br/>Kategori : Reverse<br/>Flag : <code>0byte{__Pemanasan_Gan__}</code></p>                
+            </blockquote>
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Attachment/Link/Text :</p></dd>
+<dd><p>File - <a href="/attachment/0byteCTF.Chal/ez">ez</a></p></dd>
+</dl>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>cek file ez yaitu ELF 64-bit</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ file ez
+ez: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=acc203ca5665daaff68df2f44183d91da2e6a7b9, not stripped
+</code></pre>
+
+<dl>
+<dd>setelah saya jalankan disuruh inputkan flag saya coba masukkan karakter <code>w</code> ternyata sedih yah salah.</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ ./ez
+[+] Insert Flag : w
+[-] Sadlo, masih salah hhhh
+</code></pre>
+
+<dl>
+<dd>Lalu saya coba untuk sedikit mentrace variabel dari file tersebut dengan memakai bantuan ltrace <code>ltrace ./ez</code> lalu saya coba masukkan karakter <code>w</code> dan terlihat ada variabel yang dipanggil untuk pencocokan inputan.</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ ltrace ./ez
+printf(&quot;[+] Insert Flag : &quot;)      = 18
+fgets([+] Insert Flag : w &quot;w\n&quot;, 25, 0x7fedb95b4a00)  = 0x7ffd406e5b10
+strcmp(&quot;w\n&quot;, &quot;__Pemanasan_Gan__\n&quot;)                        = 24
+puts(&quot;[-] Sadlo, masih salah hhhh&quot;[-] Sadlo, masih salah hhhh)                        = 28
++++ exited (status 0) +++
+</code></pre>
+
+<dl>
+<dd>lalu saya copas <code>__Pemanasan_Gan__</code> dan saya gunakan untuk mengisi inputan flag di file ELF tersebut dan Floooooo</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ ./ez       
+[+] Insert Flag : __Pemanasan_Gan__
+[+] Gudlo, dah bener
+[+] Flag : 0byte{__Pemanasan_Gan__}
+</code></pre>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/wu/js/prism.js"></script>
+<script type="text/javascript">
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+    </body>
+</html>

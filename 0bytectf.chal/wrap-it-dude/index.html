@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wrap It Dude! - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/wu/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/wu/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/wu/img/0byteCTF.Chal">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">0byteCTF.Chal</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        <div class="container">
+        <div class="content">
+            <blockquote>
+                <p class="title is-3">Wrap It Dude!</p>
+                <p class="subtitle is-6">Point : 50<br/>Kategori : Web<br/>Flag : <code>0byte{f1Le_1nClus10n_iTs_FuN_R1GhT}</code></p>                
+            </blockquote>
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Deskripsi/Clue : <code>There is no clue, Just hack this!</code></p></dd>
+<dd><p>Attachment/Link/Text : <a href="http://45.55.46.136:8080/loremipsum">http://45.55.46.136:8080/loremipsum</a></p></dd>
+</dl>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>setelah Link dibuka munculah sebuah parameter <code>?link=main&amp;id=1</code> nah setelah saya tau bahwa parameter link itu adalah sebuah parameter yang digunakan untuk memanggil file lain saya mencoba mengganti valuenya menjadi <code>tidak tau</code></dd>
+<dt><img src="/attachment/0byteCTF.Chal/Wrap It Dude!1.png" alt="" /></dt>
+<dd><p>terlihat terdapat error disana <code>Warning: include(tidak tau.php): failed to open stream: No such file or directory in /var/www/html/loremipsum/index.php on line 20</code> setelah saya lihat dari errornya ternyata disitu include memanggil <code>nama file</code> + string <code>.php</code>, lalu saya mencoba untuk memanggil file <code>main.php</code> dengan filter base64 yang sudah menjadi fitur php karena mengapa saya mengambil file <code>main.php</code> karena di source code nya begitu :v yasudahlah saya panggil file <code>main.php</code> dengan mengganti value parameter link menjadi <code>php://filter/convert.base64-encode/resource=main</code> lalu saya mendapatkan hasil yang sudah di encode dalam bentuk base64</p></dd>
+<dt><img src="/attachment/0byteCTF.Chal/Wrap It Dude!2.png" alt="" /></dt>
+<dd><p>setelah saya decode saya tidak bisa membacanya, ya karena dibelakang ada karakter angka “1”  buat buat pusing saja, setelah saya hapus angka 1 tersebut flooooo!! dapat flag bungkus</p></dd>
+</dl>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/wu/js/prism.js"></script>
+<script type="text/javascript">
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+    </body>
+</html>

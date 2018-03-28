@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0byteCTF.Chals on Ruzfi72 Writeup</title>
+    <link>https://ruzfi72.github.io/wu/0bytectf.chal/</link>
+    <description>Recent content in 0byteCTF.Chals on Ruzfi72 Writeup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://ruzfi72.github.io/wu/0bytectf.chal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EZ Reverse</title>
+      <link>https://ruzfi72.github.io/wu/0bytectf.chal/ez-reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/wu/0bytectf.chal/ez-reverse/</guid>
+      <description>1. Executive Summary  Attachment/Link/Text :
+ File - ez
+  2. Technical Report  cek file ez yaitu ELF 64-bit  ➜ ~ file ez ez: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=acc203ca5665daaff68df2f44183d91da2e6a7b9, not stripped   setelah saya jalankan disuruh inputkan flag saya coba masukkan karakter w ternyata sedih yah salah.  ➜ ~ ./ez [+] Insert Flag : w [-] Sadlo, masih salah hhhh   Lalu saya coba untuk sedikit mentrace variabel dari file tersebut dengan memakai bantuan ltrace ltrace .</description>
+    </item>
+    
+    <item>
+      <title>Wrap It Dude!</title>
+      <link>https://ruzfi72.github.io/wu/0bytectf.chal/wrap-it-dude/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/wu/0bytectf.chal/wrap-it-dude/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : There is no clue, Just hack this!
+ Attachment/Link/Text : http://45.55.46.136:8080/loremipsum
+  2. Technical Report  setelah Link dibuka munculah sebuah parameter ?link=main&amp;amp;id=1 nah setelah saya tau bahwa parameter link itu adalah sebuah parameter yang digunakan untuk memanggil file lain saya mencoba mengganti valuenya menjadi tidak tau  terlihat terdapat error disana Warning: include(tidak tau.php): failed to open stream: No such file or directory in /var/www/html/loremipsum/index.</description>
+    </item>
+    
+  </channel>
+</rss>

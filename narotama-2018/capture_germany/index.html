@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture_Germany - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/wu/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/wu/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/wu/img/Narotama%202018">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">Narotama 2018</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        <div class="container">
+        <div class="content">
+            <blockquote>
+                <p class="title is-3">Capture_Germany</p>
+                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Stegano<br/>Flag : <code>CTFN{f663307999a7299cc288da6b0afe8b9f}</code></p>                
+            </blockquote>
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Deskripsi/Clue : <code>Coba cari aku!</code></p></dd>
+<dd><p>Attachment/Link : <a href="/attachment/Narotama 2018/Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg">Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg</a></p></dd>
+</dl>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>Pertama saya lakukan pengecekan jenis file</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ file Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg 
+Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=2, xresolution=40, yresolution=48], baseline, precision 8, 1600x900, frames 3
+</code></pre>
+
+<dl>
+<dd>ternyata memang Gambar. Lalu saya lakukan pengecekan Exif data</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ exif Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg 
+EXIF tags in 'Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg' ('Intel' byte order):
+--------------------+----------------------------------------------------------
+Tag                 |Value
+--------------------+----------------------------------------------------------
+X-Resolution        |300
+Y-Resolution        |300
+Resolution Unit     |Inch
+Exif Version        |Exif Version 2.1
+FlashPixVersion     |FlashPix Version 1.0
+Color Space         |Internal error (unknown value 65535)
+--------------------+----------------------------------------------------------
+</code></pre>
+
+<dl>
+<dd>Masih belum saya temukan flag dari gambar tersebut.</dd>
+<dd>Namun saya teringat pernah membaca suatu Blog
+Write-UP bahwa bisa saja dalam gambar tersebut terdapat file yang disembunyikan.<br />
+Lalu saya lakukan pengecekan dengan menggunakan perintah <code>binwalk [nama file]</code></dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ binwalk Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, EXIF standard
+12            0xC             TIFF image data, little-endian offset of first image directory: 8
+90068         0x15FD4         Zip archive data, at least v2.0 to extract, name: Flag/
+90135         0x16017         Zip archive data, at least v2.0 to extract, uncompressed size: 33, name: Flag/Secret.txt
+90263         0x16097         Zip archive data, at least v2.0 to extract, uncompressed size: 422, name: Flag/Eyes1.jpg
+90767         0x1628F         End of Zip archive
+</code></pre>
+
+<dl>
+<dd>dan akhirnya terlihat bahwa dalam gambar tersebut terdapat , lalu saya lakukan ekstraksi file tersebut
+menggunakan perintah <code>binwalk -e [nama file]</code>.<br />
+Setelah itu masuk ke dalam folder <code>[nama file tadi].extracted</code> terdapat Folder Flag dan File ZIP.<br />
+terdapat Gambar didalam Folder Flag dan saya lakukan <code>binwalk</code> lagi sampai saya dapatkan file Flag.txt yang berisi flag soal ini</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ binwalk -e Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, EXIF standard
+12            0xC             TIFF image data, little-endian offset of first image directory: 8
+90068         0x15FD4         Zip archive data, at least v2.0 to extract, name: Flag/
+90135         0x16017         Zip archive data, at least v2.0 to extract, uncompressed size: 33, name: Flag/Secret.txt
+90263         0x16097         Zip archive data, at least v2.0 to extract, uncompressed size: 422, name: Flag/Eyes1.jpg
+90767         0x1628F         End of Zip archive
+
+➜  ~ ls
+archetypes   content  layouts     static  Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg
+config.toml  data     output.pdf  themes  _Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg.extracted
+➜  ~ cd _Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg.extracted 
+➜  _Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg.extracted ls
+15FD4.zip  Flag
+➜  _Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg.extracted cd Flag 
+➜  Flag ls
+Eyes1.jpg  Secret.txt
+➜  Flag cat Secret.txt 
+dba9a80b7f13e4e5c98a31444058fcba # &lt;- Ternyata Bukan apa apa
+➜  Flag binwalk -e Eyes1.jpg 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Zip archive data, at least v1.0 to extract, compressed size: 45, uncompressed size: 45, name: Eyes.txt
+189           0xBD            End of Zip archive
+211           0xD3            Zip archive data, at least v1.0 to extract, compressed size: 45, uncompressed size: 45, name: Eyes.txt
+400           0x190           End of Zip archive
+
+➜  Flag ls
+Eyes1.jpg  _Eyes1.jpg.extracted  Secret.txt
+➜  Flag cd _Eyes1.jpg.extracted 
+➜  _Eyes1.jpg.extracted ls
+0.zip  D3.zip  Eyes.txt
+➜  _Eyes1.jpg.extracted cat Eyes.txt 
+Flag: CTFN{f663307999a7299cc288da6b0afe8b9f}
+➜  _Eyes1.jpg.extracted 
+</code></pre>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/wu/js/prism.js"></script>
+<script type="text/javascript">
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Narotama 2018s on Ruzfi72 Writeup</title>
+    <link>https://ruzfi72.github.io/wu/narotama-2018/</link>
+    <description>Recent content in Narotama 2018s on Ruzfi72 Writeup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://ruzfi72.github.io/wu/narotama-2018/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Capture_China</title>
+      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_china/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_china/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : Ubahlah diriku untuk bisa kamu tau siapakah diriku
+ Attachment/Link/Text : http://80.211.184.148/soal_ctf_web/index.php
+  2. Technical Report   Pertama saya lakukan view-source dan akhirnya mendapatkan sebuah clue bahwa ada data username dan password yang tertulis dalam source html dalam tag yang dikomentar
+  lalu langsung saya submit eh ternyata gagal. karena saya melakukan sebuah aksi GET bukan POST lalu saya mengubahnya dan ternyata masih salah karena passwordnya dalam bentuk base64, lalu saya coba decode password tersebut lalu login dan ada flag didalamnya</description>
+    </item>
+    
+    <item>
+      <title>Capture_Germany</title>
+      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_germany/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_germany/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : Coba cari aku!
+ Attachment/Link : Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg
+  2. Technical Report  Pertama saya lakukan pengecekan jenis file  ➜ ~ file Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=2, xresolution=40, yresolution=48], baseline, precision 8, 1600x900, frames 3   ternyata memang Gambar. Lalu saya lakukan pengecekan Exif data  ➜ ~ exif Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg EXIF tags in &#39;Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg&#39; (&#39;Intel&#39; byte order): --------------------+---------------------------------------------------------- Tag |Value --------------------+---------------------------------------------------------- X-Resolution |300 Y-Resolution |300 Resolution Unit |Inch Exif Version |Exif Version 2.</description>
+    </item>
+    
+    <item>
+      <title>Capture_Spain</title>
+      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_spain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_spain/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : Ingat semua flag memakai CTFN{}
+ Attachment/Link/Text :
+  01000010 01110101 01101011 01100001 01101110 00100000 01000001 01101011 01110101 WWFuZyBKZWxhcyBCdWthbiBBa3U= WrjzcBfdArpr  2. Technical Report  Pertama saya identifikasi jenis teks tersebut mulai dari baris pertama yang merupakan Kode Binary, baris kedua yang merupakan Encode Base64, baris ketiga agak rumit harus googling dulu akhirnya ketemu baris ketiga menggunakan Cipher Caesar namun saat ingin mendecrypt dibutuhkan Shift saat proses encrypt Cipher tersebut dan akhirnya kami menemukan dengan cara Brute Force Shift atau mencoba semua Shift sampai Ketemu  #!</description>
+    </item>
+    
+  </channel>
+</rss>

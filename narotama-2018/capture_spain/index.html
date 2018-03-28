@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture_Spain - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/wu/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/wu/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/wu/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/wu/img/Narotama%202018">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">Narotama 2018</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        <div class="container">
+        <div class="content">
+            <blockquote>
+                <p class="title is-3">Capture_Spain</p>
+                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Crypto<br/>Flag : <code>CTFN{FasilKomJaya}</code></p>                
+            </blockquote>
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Deskripsi/Clue : <code>Ingat semua flag memakai CTFN{}</code></p></dd>
+<dd><p>Attachment/Link/Text :</p></dd>
+</dl>
+
+<pre><code class="language-php">01000010 01110101 01101011 01100001 01101110 00100000 01000001 01101011 01110101
+
+WWFuZyBKZWxhcyBCdWthbiBBa3U=
+
+WrjzcBfdArpr
+</code></pre>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>Pertama saya identifikasi jenis teks tersebut mulai dari baris pertama yang merupakan Kode Binary, baris
+kedua yang merupakan Encode Base64, baris ketiga agak rumit harus googling dulu akhirnya ketemu
+baris ketiga menggunakan Cipher Caesar namun saat ingin mendecrypt dibutuhkan Shift saat proses
+encrypt Cipher tersebut dan akhirnya kami menemukan dengan cara Brute Force Shift atau mencoba
+semua Shift sampai Ketemu</dd>
+</dl>
+
+<pre><code class="language-python">#!/usr/bin/python
+import hackercodecs
+
+str1 = &quot;01000010 01110101 01101011 01100001 01101110 00100000 01000001 01101011 01110101&quot;
+str2 = &quot;WWFuZyBKZWxhcyBCdWthbiBBa3U=&quot;
+str3 = &quot;WrjzcBfdArpr&quot;
+bin = str1.split(&quot; &quot;)
+str1 = []
+for isi in bin:
+    a = int(str(isi), 2)
+    str1.append(chr(a))
+print &quot;&quot;.join(str1)
+print str2.decode(&quot;base64&quot;)
+for b in range(1,26):
+    print str3.decode(&quot;rot&quot;+str(b)) # &lt;- Ketemu di Shift 17
+</code></pre>
+
+<pre><code class="language-ruby">➜  ~ python solver.py
+Bukan Aku
+Yang Jelas Bukan Aku
+VqiybAecZqoq
+UphxaZdbYpnp
+TogwzYcaXomo
+SnfvyXbzWnln
+RmeuxWayVmkm
+QldtwVzxUljl
+PkcsvUywTkik
+OjbruTxvSjhj
+NiaqtSwuRigi
+MhzpsRvtQhfh
+LgyorQusPgeg
+KfxnqPtrOfdf
+JewmpOsqNece
+IdvloNrpMdbd
+HcuknMqoLcac
+GbtjmLpnKbzb
+FasilKomJaya # &lt;- Shift 17 Disini
+EzrhkJnlIzxz
+DyqgjImkHywy
+CxpfiHljGxvx
+BwoehGkiFwuw
+AvndgFjhEvtv
+ZumcfEigDusu
+YtlbeDhfCtrt
+XskadCgeBsqs
+➜  ~ 
+</code></pre>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/wu/js/prism.js"></script>
+<script type="text/javascript">
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+    </body>
+</html>
