@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ruzfi72 Writeup</title>
-    <link>https://ruzfi72.github.io/wu/categories/</link>
+    <link>https://ruzfi72.github.io/writeup/categories/</link>
     <description>Recent content in Categories on Ruzfi72 Writeup</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://ruzfi72.github.io/wu/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ruzfi72.github.io/writeup/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

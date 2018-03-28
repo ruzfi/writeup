@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruzfi72 Writeup</title>
-    <link>https://ruzfi72.github.io/wu/</link>
+    <link>https://ruzfi72.github.io/writeup/</link>
     <description>Recent content on Ruzfi72 Writeup</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://ruzfi72.github.io/wu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ruzfi72.github.io/writeup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Capture_China</title>
-      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_china/</link>
+      <link>https://ruzfi72.github.io/writeup/narotama-2018/capture_china/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_china/</guid>
+      <guid>https://ruzfi72.github.io/writeup/narotama-2018/capture_china/</guid>
       <description>1. Executive Summary  Deskripsi/Clue : Ubahlah diriku untuk bisa kamu tau siapakah diriku
  Attachment/Link/Text : http://80.211.184.148/soal_ctf_web/index.php
   2. Technical Report   Pertama saya lakukan view-source dan akhirnya mendapatkan sebuah clue bahwa ada data username dan password yang tertulis dalam source html dalam tag yang dikomentar
@@ -23,10 +23,10 @@
     
     <item>
       <title>Capture_Germany</title>
-      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_germany/</link>
+      <link>https://ruzfi72.github.io/writeup/narotama-2018/capture_germany/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_germany/</guid>
+      <guid>https://ruzfi72.github.io/writeup/narotama-2018/capture_germany/</guid>
       <description>1. Executive Summary  Deskripsi/Clue : Coba cari aku!
  Attachment/Link : Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg
   2. Technical Report  Pertama saya lakukan pengecekan jenis file  ➜ ~ file Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=2, xresolution=40, yresolution=48], baseline, precision 8, 1600x900, frames 3   ternyata memang Gambar. Lalu saya lakukan pengecekan Exif data  ➜ ~ exif Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg EXIF tags in &#39;Trumph1_5ba16776af8a616eb0295fddf2d28440.jpg&#39; (&#39;Intel&#39; byte order): --------------------+---------------------------------------------------------- Tag |Value --------------------+---------------------------------------------------------- X-Resolution |300 Y-Resolution |300 Resolution Unit |Inch Exif Version |Exif Version 2.</description>
@@ -34,10 +34,10 @@
     
     <item>
       <title>Capture_Spain</title>
-      <link>https://ruzfi72.github.io/wu/narotama-2018/capture_spain/</link>
+      <link>https://ruzfi72.github.io/writeup/narotama-2018/capture_spain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruzfi72.github.io/wu/narotama-2018/capture_spain/</guid>
+      <guid>https://ruzfi72.github.io/writeup/narotama-2018/capture_spain/</guid>
       <description>1. Executive Summary  Deskripsi/Clue : Ingat semua flag memakai CTFN{}
  Attachment/Link/Text :
   01000010 01110101 01101011 01100001 01101110 00100000 01000001 01101011 01110101 WWFuZyBKZWxhcyBCdWthbiBBa3U= WrjzcBfdArpr  2. Technical Report  Pertama saya identifikasi jenis teks tersebut mulai dari baris pertama yang merupakan Kode Binary, baris kedua yang merupakan Encode Base64, baris ketiga agak rumit harus googling dulu akhirnya ketemu baris ketiga menggunakan Cipher Caesar namun saat ingin mendecrypt dibutuhkan Shift saat proses encrypt Cipher tersebut dan akhirnya kami menemukan dengan cara Brute Force Shift atau mencoba semua Shift sampai Ketemu  #!</description>
@@ -45,10 +45,10 @@
     
     <item>
       <title>EZ Reverse</title>
-      <link>https://ruzfi72.github.io/wu/0bytectf.chal/ez-reverse/</link>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/ez-reverse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruzfi72.github.io/wu/0bytectf.chal/ez-reverse/</guid>
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/ez-reverse/</guid>
       <description>1. Executive Summary  Attachment/Link/Text :
  File - ez
   2. Technical Report  cek file ez yaitu ELF 64-bit  ➜ ~ file ez ez: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=acc203ca5665daaff68df2f44183d91da2e6a7b9, not stripped   setelah saya jalankan disuruh inputkan flag saya coba masukkan karakter w ternyata sedih yah salah.  ➜ ~ ./ez [+] Insert Flag : w [-] Sadlo, masih salah hhhh   Lalu saya coba untuk sedikit mentrace variabel dari file tersebut dengan memakai bantuan ltrace ltrace .</description>
@@ -56,10 +56,10 @@
     
     <item>
       <title>Wrap It Dude!</title>
-      <link>https://ruzfi72.github.io/wu/0bytectf.chal/wrap-it-dude/</link>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/wrap-it-dude/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruzfi72.github.io/wu/0bytectf.chal/wrap-it-dude/</guid>
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/wrap-it-dude/</guid>
       <description>1. Executive Summary  Deskripsi/Clue : There is no clue, Just hack this!
  Attachment/Link/Text : http://45.55.46.136:8080/loremipsum
   2. Technical Report  setelah Link dibuka munculah sebuah parameter ?link=main&amp;amp;id=1 nah setelah saya tau bahwa parameter link itu adalah sebuah parameter yang digunakan untuk memanggil file lain saya mencoba mengganti valuenya menjadi tidak tau  terlihat terdapat error disana Warning: include(tidak tau.php): failed to open stream: No such file or directory in /var/www/html/loremipsum/index.</description>
