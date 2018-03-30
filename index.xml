@@ -17,7 +17,7 @@
       <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/bacon-and-friend/</guid>
       <description>1. Executive Summary  Deskripsi/Clue : lalala
  Attachment/Link/Text :
-  ----- -... -.-- - . ew== BBAAAABBBABABAAAABBAABBBABAABBBAABBAABBBAABAAAAAABAAAAAAAABAABBBAABBABABAAAAAAAAABBAB fQ==  2. Technical Report  setelah itu saya identifikasi tipe kata tersebut, yang baris pertama berupa kode morse yang bisa di terjemahkan di https://morsecode.scphillips.com/translator.html yang baris kedua dan keempat itu sama yaitu base64 yang baris ketiga yaitu bacon-cipher yang bisa di decode di https://www.dcode.fr/bacon-cipher/  lalu saya coba masukkan flagnya dan zonk saya mendapat pesan bad flag, lalu saya lihat lagi placeholdernya yang berpesan bahwa header flag semuanya menggunakan “0byte” case-sensitive langsung saja saya submit lagi dan flooo!</description>
+  ----- -... -.-- - . ew== BBAAAABBBABABAAAABBAABBBABAABBBAABBAABBBAABAAAAAABAAAAAAAABAABBBAABBABABAAAAAAAAABBAB fQ==  2. Technical Report  setelah itu saya identifikasi tipe kata tersebut, yang baris pertama berupa kode morse yang bisa di terjemahkan di https://morsecode.scphillips.com/translator.html yang baris kedua dan keempat itu sama yaitu base64 yang baris ketiga yaitu bacon-cipher yang bisa di decode di https://www.dcode.fr/bacon-cipher/  lalu saya coba masukkan flagnya dan zonk saya mendapat pesan bad flag, lalu saya lihat lagi placeholdernya yang berpesan bahwa header flag semuanya menggunakan 0byte case-sensitive langsung saja saya submit lagi dan flooo!</description>
     </item>
     
     <item>
