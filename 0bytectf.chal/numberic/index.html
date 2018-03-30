@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Numberic - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/writeup/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/writeup/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/writeup/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/writeup/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/writeup/img/0byteCTF.Chal">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">0byteCTF.Chal</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        
+        <div class="container">
+        <div class="content">
+            
+            <blockquote>
+                <p class="title is-3">Numberic</p>
+                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Crypto<br/>Flag : <code>0byte{Hex_D3cimal_0ct4l_and_Binary}</code></p>                
+            </blockquote>
+            
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Deskripsi/Clue : <code>lalala</code></p></dd>
+<dd><p>Attachment/Link/Text :</p></dd>
+</dl>
+
+<pre><code class="language-ruby">“30 98 0171 1110100 65 123 0110 01100101 78 97 0137 01000100 33 99 0151 01101101 61 108 0137 00110000 63 116 064 01101100 5f 97 0156 01100100 5f 66 061 01101110 61 114 0171 01111101”
+</code></pre>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>Beberapa kumpulan karakter yang saya tau itu merupakan bentuk lain dari karakter ascii lalu saya coba convert manual :(</dd>
+</dl>
+
+<p><img src="https://ruzfi72.github.io/writeup/attachment/0byteCTF.Chal/Numberic1.png" alt="" /></p>
+
+<p>Subhanallah budi sangat manual sekali :( maklum saya belum bisa otomatisasi pakai kode.
+Saya memakai link di bawah ini untuk menkonversi karakter diatas yang merupakan campuran dari karakter binary hex octal dan desimal ke dalam bentuk ascii.</p>
+
+<p>Konverter yang saya pakai :<br />
+<a href="http://www.kjetil-hartveit.com/blog/10/hex-binary-decimal-octal-and-ascii-converter">http://www.kjetil-hartveit.com/blog/10/hex-binary-decimal-octal-and-ascii-converter</a><br />
+<a href="https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html">https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html</a></p>
+
+<p>Namun setelah waktu CTF ini selesai saya mulai mencoba untuk membuat penyelesaian menggunakan python dengan mengandalkan operasi if else. Seperti dibawah ini.</p>
+
+<pre><code class="language-python">#!/usr/bin/python
+
+'''
+Numberic Solver
+Ruzfi72
+'''
+
+# a = &quot;30 98 0171 1110100 65 123 0110 01100101 78 97 0137 01000100 33 99 0151 01101101 61 108 0137 00110000 63 116 064 01101100 x5f 97 0156 01100100 x5f 66 061 01101110 61 114 0171 01111101&quot;
+# hasilnya &quot;bytA{HeNa_D!cim=l_0?t@l_and_B=n=ry}&quot;
+
+a = &quot;x30 98 0171 1110100 x65 123 0110 01100101 x78 97 0137 01000100 x33 99 0151 01101101 x61 108 0137 00110000 x63 116 0064 01101100 x5f 97 0156 01100100 x5f 66 0061 01101110 x61 114 0171 01111101&quot;
+
+b = a.split(&quot; &quot;) # &lt; - buat split perkata dengan acuan spasi untuk dijadikan list
+# print b &lt;- cek output apakah sudah betul
+
+fix = &quot;&quot; # membuat variabel kosong untuk nantinya di append
+# Lalu buat Looping untuk mencetak data 1 per 1
+for data in b:
+
+    # Pertama buat pengecekan data yang berbentuk binary yaitu panjangnya lebih dari 4
+    if len(data) &gt; 4:
+        '''
+        Lalu coba cetak
+        &gt; print data
+
+        Setelah itu konversikan kedalam bentuk Desimal
+        &gt; data = int(data,2) # &lt;- Base 2 untuk binary
+        Lalu coba cetak apakah sudah berubah ke bentuk desimal
+        &gt; print data
+
+        Setelah itu ubah ke bentuk karakter
+        &gt; data = chr(data)
+        Dan Cek
+        &gt; print data
+        '''
+        # Untuk dapat mempersingkat maka langsung saja gabungkan mereka
+        fix += chr(int(data,2))
+        # &gt; print data
+
+    # Kedua buat pengecekan data yang berbentuk octal yaitu panjangnya tepat samadengan 4
+    elif len(data) == 4:
+        # &gt; print data
+        # Seperti alur diatas konversi ke desimal lalu ubah ke chr
+        fix += chr (int(data,8)) # Base 8 untuk octal
+        # &gt; print data
+
+    # Ketiga buat pengecekan data yang berbentuk desimal yaitu panjangnya kurang samadengan 3
+    # elif len(data) &lt;= 3:
+        '''
+        # &gt; print data
+        # Langsung saja cetak menggunakan chr
+        # &gt; print chr(int(data))
+        Namun disini akan mendapat error bahwa ada karakter yang tidak sah yaitu 5f
+            File &quot;solver.py&quot;, line 42, in &lt;module&gt;
+            print chr(int(data))
+            ValueError: invalid literal for int() with base 10: '5f'
+        untuk mengatasinya tambahkan x di data 5f dan ubah kode pengecekan data untuk menghindari data yang berawalan x
+        '''
+    elif len(data) &lt;= 3 and not data.startswith(&quot;x&quot;):
+        # print chr(int(data)) &lt;- sudah tidak ada error lagi
+        fix += chr(int(data))
+
+    # Selanjutnya pengecekan heksadesimal yaitu kita harus mengecek dan mengubah di variabel a secara manual setelah kode jadi
+    elif data.startswith(&quot;x&quot;): # menggunakan x sebagai acuan pengecekan
+        # &gt; print data
+        # Lalu ubah hex ke desimal dan chr
+        fix += chr(int(&quot;0&quot;+data,16)) # Base 16 untuk hex dan tambahkan 0 didepan data
+
+# Lalu cek fix
+print fix
+# namun ternyata ada data 061 dan 064 yang berbentuk octal dan ubah mereka menjadi 0061 dan 0064
+
+# flag : 0byte{Hexa_D3cimal_0ct4l_and_B1nary}
+# referensi penggunaan int() https://docs.python.org/2/library/functions.html#int
+</code></pre>
+
+<p>Terlalu panjang sih sebenernya hehe</p>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/writeup/js/prism.js"></script>
+    </body>
+</html>

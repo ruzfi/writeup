@@ -10,6 +10,28 @@
     
     
     <item>
+      <title>Bacon and Friend</title>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/bacon-and-friend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/bacon-and-friend/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : lalala
+ Attachment/Link/Text :
+  ----- -... -.-- - . ew== BBAAAABBBABABAAAABBAABBBABAABBBAABBAABBBAABAAAAAABAAAAAAAABAABBBAABBABABAAAAAAAAABBAB fQ==  2. Technical Report  setelah itu saya identifikasi tipe kata tersebut, yang baris pertama berupa kode morse yang bisa di terjemahkan di https://morsecode.scphillips.com/translator.html yang baris kedua dan keempat itu sama yaitu base64 yang baris ketiga yaitu bacon-cipher yang bisa di decode di https://www.dcode.fr/bacon-cipher/  lalu saya coba masukkan flagnya dan zonk saya mendapat pesan bad flag, lalu saya lihat lagi placeholdernya yang berpesan bahwa header flag semuanya menggunakan “0byte” case-sensitive langsung saja saya submit lagi dan flooo!</description>
+    </item>
+    
+    <item>
+      <title>EZ 2 Get</title>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/ez-2-get/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/ez-2-get/</guid>
+      <description> 1. Executive Summary  Deskripsi/Clue : lalala
+ Attachment/Link/Text : blablabla.zip
+  2. Technical Report  Sebuah gambar qrcode yang langsung saja saya decode  </description>
+    </item>
+    
+    <item>
       <title>EZ Reverse</title>
       <link>https://ruzfi72.github.io/writeup/0bytectf.chal/ez-reverse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -18,6 +40,40 @@
       <description>1. Executive Summary  Attachment/Link/Text :
  File - ez
   2. Technical Report  cek file ez yaitu ELF 64-bit  ➜ ~ file ez ez: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=acc203ca5665daaff68df2f44183d91da2e6a7b9, not stripped   setelah saya jalankan disuruh inputkan flag saya coba masukkan karakter w ternyata sedih yah salah.  ➜ ~ ./ez [+] Insert Flag : w [-] Sadlo, masih salah hhhh   Lalu saya coba untuk sedikit mentrace variabel dari file tersebut dengan memakai bantuan ltrace ltrace .</description>
+    </item>
+    
+    <item>
+      <title>Keep Searching and Find the Flag</title>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/keep-searching-and-find-the-flag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/keep-searching-and-find-the-flag/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : lalala
+ Attachment/Link/Text : blablabla.zip
+  2. Technical Report  Saya buka menggunakan wireshark dan pertama kali yang saya cari adalah paket http, langsung saja saya filter paket http  seperti yang terlihat bahwa disana ada kegiatan GET yang akan saya bongkar disini, setelah itu saya coba membukanya dengan cara dobel klik
+dan kita buka dropdow paling bawah yang akan berisi tentang alamat file yang sedang di minta disana yaitu http://bayufedra.</description>
+    </item>
+    
+    <item>
+      <title>Numberic</title>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/numberic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/numberic/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : lalala
+ Attachment/Link/Text :
+  “30 98 0171 1110100 65 123 0110 01100101 78 97 0137 01000100 33 99 0151 01101101 61 108 0137 00110000 63 116 064 01101100 5f 97 0156 01100100 5f 66 061 01101110 61 114 0171 01111101”  2. Technical Report  Beberapa kumpulan karakter yang saya tau itu merupakan bentuk lain dari karakter ascii lalu saya coba convert manual :(  Subhanallah budi sangat manual sekali :( maklum saya belum bisa otomatisasi pakai kode.</description>
+    </item>
+    
+    <item>
+      <title>The Dirty Code</title>
+      <link>https://ruzfi72.github.io/writeup/0bytectf.chal/the-dirty-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/0bytectf.chal/the-dirty-code/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : lalala
+ Attachment/Link/Text : http://45.55.46.136:8080/BobMarley
+  2. Technical Report  Setelah saya buka ternyata menuju ke halaman Biografi bob marley woyoooo, saat saya baca saya pun penasaran dengan kelengkapan biografi tsb namun disini saya mendapat sesuatu sebelum saya buka link selengkapnya saya coba untuk view-source terlebih dahulu  terlihat ada clue sebuah parameter dipanggil untuk di echo dan di exec lalu saya mencoba membuka link selengkapnya yang terdapat parameter ?</description>
     </item>
     
     <item>

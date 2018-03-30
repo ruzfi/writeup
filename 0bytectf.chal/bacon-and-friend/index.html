@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Capture_China - Ruzfi72 Write Up</title>
+        <title>Bacon and Friend - Ruzfi72 Write Up</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -21,7 +21,7 @@
       <a href="https://ruzfi72.github.io/writeup/">
       <figure class="image is-fullwidth is-64x64">
         
-        <img src="https://ruzfi72.github.io/writeup/img/Narotama%202018">
+        <img src="https://ruzfi72.github.io/writeup/img/0byteCTF.Chal">
         
       </figure>
     </a>
@@ -29,7 +29,7 @@
     <div class="media-content">
       <div class="content has-text-centered">
         
-        <p class="title is-3 ">Narotama 2018</p>
+        <p class="title is-3 ">0byteCTF.Chal</p>
         
         <p class="subtitle is-5">Capture The Flag Write Up</p>
         <hr/>
@@ -46,8 +46,8 @@
         <div class="content">
             
             <blockquote>
-                <p class="title is-3">Capture_China</p>
-                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Web<br/>Flag : <code>CTFN{FASILKOM_NAROTAMA}</code></p>                
+                <p class="title is-3">Bacon and Friend</p>
+                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Crypto<br/>Flag : <code>0byte{YOUGOTTHEBACONIAN}</code></p>                
             </blockquote>
             
         <hr />
@@ -55,18 +55,28 @@
 <h4 id="1-executive-summary">1. Executive Summary</h4>
 
 <dl>
-<dd><p>Deskripsi/Clue : <code>Ubahlah diriku untuk bisa kamu tau siapakah diriku</code></p></dd>
-<dd><p>Attachment/Link/Text : <a href="http://80.211.184.148/soal_ctf_web/index.php">http://80.211.184.148/soal_ctf_web/index.php</a></p></dd>
+<dd><p>Deskripsi/Clue : <code>lalala</code></p></dd>
+<dd><p>Attachment/Link/Text :</p></dd>
 </dl>
+
+<pre><code class="language-ruby">----- -... -.-- - .
+ew==
+BBAAAABBBABABAAAABBAABBBABAABBBAABBAABBBAABAAAAAABAAAAAAAABAABBBAABBABABAAAAAAAAABBAB
+fQ==
+</code></pre>
 
 <h4 id="2-technical-report">2. Technical Report</h4>
 
 <dl>
-<dt><img src="https://ruzfi72.github.io/writeup/attachment/Narotama 2018/capture_China1.png" alt="" /></dt>
-<dd><p>Pertama saya lakukan view-source dan akhirnya mendapatkan sebuah clue bahwa ada data username dan password yang tertulis dalam source html dalam tag yang dikomentar</p></dd>
-<dt><img src="https://ruzfi72.github.io/writeup/attachment/Narotama 2018/capture_China2.png" alt="" /></dt>
-<dd><p>lalu langsung saya submit eh ternyata gagal. karena saya melakukan sebuah aksi GET bukan POST lalu saya mengubahnya dan ternyata masih salah karena passwordnya dalam bentuk base64, lalu saya coba decode password tersebut lalu login dan ada flag didalamnya</p></dd>
+<dd>setelah itu saya identifikasi tipe kata tersebut, yang baris pertama berupa kode morse yang bisa di terjemahkan di <a href="https://morsecode.scphillips.com/translator.html">https://morsecode.scphillips.com/translator.html</a>
+yang baris kedua dan keempat itu sama yaitu base64
+yang baris ketiga yaitu bacon-cipher yang bisa di decode di <a href="https://www.dcode.fr/bacon-cipher/">https://www.dcode.fr/bacon-cipher/</a></dd>
 </dl>
+
+<p><img src="https://ruzfi72.github.io/writeup/attachment/0byteCTF.Chal/Bacon and Friend1.png" alt="" /></p>
+
+<p>lalu saya coba masukkan flagnya dan zonk saya mendapat pesan bad flag, lalu saya lihat lagi placeholdernya yang berpesan bahwa header flag semuanya menggunakan “0byte” case-sensitive
+langsung saja saya submit lagi dan flooo! gacha.</p>
 
         </div>
         </div>
