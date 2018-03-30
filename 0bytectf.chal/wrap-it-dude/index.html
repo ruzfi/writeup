@@ -59,9 +59,9 @@
 
 <dl>
 <dd>setelah Link dibuka munculah sebuah parameter <code>?link=main&amp;id=1</code> nah setelah saya tau bahwa parameter link itu adalah sebuah parameter yang digunakan untuk memanggil file lain saya mencoba mengganti valuenya menjadi <code>tidak tau</code></dd>
-<dt><img src="/attachment/0byteCTF.Chal/Wrap It Dude!1.png" alt="" /></dt>
+<dt><img src="https://ruzfi72.github.io/writeup/attachment/0byteCTF.Chal/Wrap It Dude!1.png" alt="" /></dt>
 <dd><p>terlihat terdapat error disana <code>Warning: include(tidak tau.php): failed to open stream: No such file or directory in /var/www/html/loremipsum/index.php on line 20</code> setelah saya lihat dari errornya ternyata disitu include memanggil <code>nama file</code> + string <code>.php</code>, lalu saya mencoba untuk memanggil file <code>main.php</code> dengan filter base64 yang sudah menjadi fitur php karena mengapa saya mengambil file <code>main.php</code> karena di source code nya begitu :v yasudahlah saya panggil file <code>main.php</code> dengan mengganti value parameter link menjadi <code>php://filter/convert.base64-encode/resource=main</code> lalu saya mendapatkan hasil yang sudah di encode dalam bentuk base64</p></dd>
-<dt><img src="/attachment/0byteCTF.Chal/Wrap It Dude!2.png" alt="" /></dt>
+<dt><img src="https://ruzfi72.github.io/writeup/attachment/0byteCTF.Chal/Wrap It Dude!2.png" alt="" /></dt>
 <dd><p>setelah saya decode saya tidak bisa membacanya, ya karena dibelakang ada karakter angka “1”  buat buat pusing saja, setelah saya hapus angka 1 tersebut flooooo!! dapat flag bungkus</p></dd>
 </dl>
 
