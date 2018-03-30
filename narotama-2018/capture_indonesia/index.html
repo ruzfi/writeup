@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture_Indonesia - Ruzfi72 Write Up</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="icon" href="https://ruzfi72.github.io/writeup/img/smile.png" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/writeup/css/bulma.css" />
+<link rel="stylesheet" href="https://ruzfi72.github.io/writeup/css/prism.css" />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <a href="https://ruzfi72.github.io/writeup/">
+      <figure class="image is-fullwidth is-64x64">
+        
+        <img src="https://ruzfi72.github.io/writeup/img/Narotama%202018">
+        
+      </figure>
+    </a>
+    </div>
+    <div class="media-content">
+      <div class="content has-text-centered">
+        
+        <p class="title is-3 ">Narotama 2018</p>
+        
+        <p class="subtitle is-5">Capture The Flag Write Up</p>
+        <hr/>
+<p class="field-label is-small">Ruzfi72</p>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</div>
+</section>
+        <div class="container">
+        <div class="content">
+            <blockquote>
+                <p class="title is-3">Capture_Indonesia</p>
+                <p class="subtitle is-6">Point : Lupa<br/>Kategori : Reverse<br/>Flag : <code>CTFN{Unn4r_2018}</code></p>                
+            </blockquote>
+        <hr />
+
+<h4 id="1-executive-summary">1. Executive Summary</h4>
+
+<dl>
+<dd><p>Deskripsi/Clue : <code>Betulkan aku, lalu cari aku dan bandingkan aku</code></p></dd>
+<dd><p>Attachment/Link/Text : <a href="https://ruzfi72.github.io/writeup/attachment/Narotama 2018/Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg">Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg</a></p></dd>
+</dl>
+
+<h4 id="2-technical-report">2. Technical Report</h4>
+
+<dl>
+<dd>Pertama saya lakukan pengecekan tipe file</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ file Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg 
+Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg: data
+</code></pre>
+
+<dl>
+<dd>Terlihat bahwa file tersebut berisi data, selanjutnya langsung saja saya cari string yang menjadi acuan flag</dd>
+</dl>
+
+<pre><code class="language-ruby">➜  ~ strings Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg | grep CTFN
+&quot; id=&quot;W5M0MpCehiHzreSzNTczkc9d&quot;?&gt; &lt;x:xmpmeta xmlns:x=&quot;adobe:ns:meta/&quot; x:xmptk=&quot;Adobe XMP Core 5.6-c067 79.157747, 2015/03/30-23:40:42        &quot;&gt; &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns&quot;&gt; &lt;rdf:Description rdf:about=&quot;&quot; xmlns:xmp=&quot;http://ns.adobe.com/xap/1.0/&quot; xmlns:xmpMM=&quot;http://ns.adobe.com/xap/1.0/mm/&quot; xmlns:stEvt=&quot;http://ns.adobe.com/xap/1.0/sType/ResourceEvent&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:photoshop=&quot;http://ns.adobe.com/photoshop/1.0/&quot; xmp:CreatorTool=&quot;Adobe Photoshop CS6 (Windows)&quot; xmp:ModifyDate=&quot;2018-02-07T15:25:28+07:00&quot; xmp:CreateDate=&quot;2016-12-22T07:34:35+07:00&quot; xmp:MetadataDate=&quot;2018-02-07T15:25:28+07:00&quot; xmpMM:DocumentID=&quot;adobe:docid:photoshop:e0c3851b-4bce-117b-9b1d-bdf2c6d64908&quot; xmpMM:InstanceID=&quot;xmp.iid:736081f6-a3d6-4cf2-bb3f-814799cd9856&quot; xmpMM:OriginalDocumentID=&quot;BA4D90182E6C650BEA1B2B75E915DA28&quot; dc:format=&quot;image/jpeg&quot; photoshop:ColorMode=&quot;3&quot; photoshop:ICCProfile=&quot;sRGB IEC61966-2.1&quot;&gt; &lt;xmpMM:History&gt; &lt;rdf:Seq&gt; &lt;rdf:li stEvt:action=&quot;saved&quot; stEvt:instanceID=&quot;xmp.iid:b17b1c00-20e2-45bd-a85a-39bd440ec7b6&quot; stEvt:when=&quot;2018-02-07T15:25:28+07:00&quot; stEvt:softwareAgent=&quot;Adobe Photoshop CC 2015 (Macintosh)&quot; stEvt:changed=&quot;/&quot;/&gt; &lt;rdf:li stEvt:action=&quot;saved&quot; stEvt:instanceID=&quot;xmp.iid:736081f6-a3d6-4cf2-bb3f-814799cd9856&quot; stEvt:when=&quot;2018-02-07T15:25:28+07:00&quot; stEvt:softwareAgent=&quot;Adobe Photoshop CC 2015 (Macintosh)&quot; stEvt:changed=&quot;/&quot;/&gt; &lt;/rdf:Seq&gt; &lt;/xmpMM:History&gt; &lt;photoshop:TextLayers&gt; &lt;rdf:Bag&gt; &lt;rdf:li photoshop:LayerName=&quot;CTFN{Unn4r_2018}&quot; photoshop:LayerText=&quot;CTFN{Unn4r_2018}&quot;/&gt; &lt;/rdf:Bag&gt; &lt;/photoshop:TextLayers&gt; &lt;/rdf:Description&gt; &lt;/rdf:RDF&gt; &lt;/x:xmpmeta&gt;
+
+
+&lt;?xpacket end=&quot;w&quot;?&gt;
+</code></pre>
+
+<dl>
+<dd>Terlihat disana ada tag layer yang berisikan flag</dd>
+</dl>
+
+        </div>
+        </div>
+        <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript" src="https://ruzfi72.github.io/writeup/js/prism.js"></script>
+<script type="text/javascript">
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+});
+</script>
+    </body>
+</html>

@@ -33,6 +33,17 @@
     </item>
     
     <item>
+      <title>Capture_Indonesia</title>
+      <link>https://ruzfi72.github.io/writeup/narotama-2018/capture_indonesia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ruzfi72.github.io/writeup/narotama-2018/capture_indonesia/</guid>
+      <description>1. Executive Summary  Deskripsi/Clue : Betulkan aku, lalu cari aku dan bandingkan aku
+ Attachment/Link/Text : Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg
+  2. Technical Report  Pertama saya lakukan pengecekan tipe file  ➜ ~ file Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg: data   Terlihat bahwa file tersebut berisi data, selanjutnya langsung saja saya cari string yang menjadi acuan flag  ➜ ~ strings Reverse_64e4811f1a8fd49e419c2d08af7eecd7.jpg | grep CTFN &amp;quot; id=&amp;quot;W5M0MpCehiHzreSzNTczkc9d&amp;quot;?&amp;gt; &amp;lt;x:xmpmeta xmlns:x=&amp;quot;adobe:ns:meta/&amp;quot; x:xmptk=&amp;quot;Adobe XMP Core 5.</description>
+    </item>
+    
+    <item>
       <title>Capture_Spain</title>
       <link>https://ruzfi72.github.io/writeup/narotama-2018/capture_spain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
